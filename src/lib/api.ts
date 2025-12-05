@@ -171,3 +171,10 @@ export const adminAPI = {
   },
 };
 
+// Public API (no authentication required)
+export const publicAPI = {
+  getStats: async () => {
+    const response = await axios.get(`${API_BASE_URL.replace('/api/v1', '')}/api/v1/public/stats`);
+    return response.data;
+  },
+};
